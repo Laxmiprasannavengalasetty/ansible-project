@@ -5,5 +5,9 @@
   - name: install mysql server
     ansible.builtin.package:
       name: mysql-server
-      stste: present
-  
+      state: present
+  - name: start mysql server
+    ansible.builtin.service:
+      name: mysql-server
+      state: started
+      enabled: yes
